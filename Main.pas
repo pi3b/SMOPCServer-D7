@@ -43,6 +43,8 @@ type
     procedure btnHideClick(Sender: TObject);
     procedure N1Click(Sender: TObject);
     procedure btn1AboutClick(Sender: TObject);
+    procedure FormMouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
   public
    clientsConnected:integer;
    function ReturnItemValue(szItemID:string):variant;     
@@ -185,7 +187,7 @@ procedure TForm1.UpdateGroupCount;
 var
  i,g:integer;
 begin
-  if not Visible  then Exit;
+//  if not Visible  then Exit;
  if Application.Terminated then Exit;
  clientsConnected:=0;
  g:=0;
@@ -262,6 +264,13 @@ end;
 procedure TForm1.btn1AboutClick(Sender: TObject);
 begin
 N1Click(nil);
+end;
+
+procedure TForm1.FormMouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+begin
+ReleaseCapture;
+ Perform(WM_SYSCOMMAND, $F017 , 0);
 end;
 
 end.

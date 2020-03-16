@@ -12,7 +12,7 @@ unit SMOPC_TLB;
 // ************************************************************************ //
 
 // PASTLWTR : 1.2
-// File generated on 2020/3/10 8:59:14 from Type Library described below.
+// File generated on 2020/3/10 14:45:14 from Type Library described below.
 
 // ************************************************************************  //
 // Type Lib: D:\Proj\SMOPCServer-D7\SMOPCServer.tlb (1)
