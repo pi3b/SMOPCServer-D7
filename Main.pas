@@ -241,6 +241,8 @@ end;
 
 procedure TForm1.N3Click(Sender: TObject);
 begin
+  trycn1.Visible:=False;
+  Application.ProcessMessages;
   ExitProcess(0);
 end;
 
