@@ -61,7 +61,8 @@ aReg:=nil;
   aReg:=TRegistry.Create;
   aReg.RootKey:=HKEY_CLASSES_ROOT;
   aReg.OpenKey('CLSID\'+myCLSIDString,true);
-  aReg.WriteString('','SMOPC OPC Data Access 2.0');
+  aReg.WriteString('','SMOPC OPC Data Access 2.0');     
+  aReg.WriteString('AppID',myCLSIDString);
  finally
   aReg.CloseKey;
   aReg.Free;
@@ -73,6 +74,19 @@ aReg:=nil;
   aReg.RootKey:=HKEY_CLASSES_ROOT;
   aReg.OpenKey('CLSID\'+myCLSIDString+'\ProgID',true);
   aReg.WriteString('',name);
+ finally
+  aReg.CloseKey;
+  aReg.Free;
+ end;
+     //注册到APPID，用于DCOM  
+ aReg:=nil;
+ try
+  aReg:=TRegistry.Create;
+  aReg.RootKey:=HKEY_CLASSES_ROOT;
+  aReg.OpenKey('AppID\'+myCLSIDString,true);
+  aReg.WriteString('',name);
+  //aReg.WriteString('DllSurrogate','');//DLL替代
+  aReg.WriteString('RunAs','Interactive User');//交互式用户
  finally
   aReg.CloseKey;
   aReg.Free;

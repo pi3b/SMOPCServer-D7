@@ -31,6 +31,7 @@ type
     RegSerBtn: TButton;
     UnRegBtn: TButton;
     btn1About: TButton;
+    lbl1: TLabel;
     procedure RegSerBtnClick(Sender: TObject);
     procedure CloseBtnClick(Sender: TObject);
     procedure SDButtonClick(Sender: TObject);
@@ -62,7 +63,7 @@ implementation
 uses ServImpl,OPCCOMN,Globals,ActiveX;
 
 const
- serverName = 'SMOPC.DA2.1';
+ serverName = 'SMOPC.DA2';
 
 procedure TForm1.RegSerBtnClick(Sender: TObject);
 begin

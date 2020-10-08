@@ -22,9 +22,7 @@ uses
   OPCerror in 'OPCerror.pas',
   OPCtypes in 'OPCtypes.pas',
   SMOPC_TLB in 'SMOPC_TLB.pas',
-  deviceUnit in 'deviceUnit.pas',
-  SMOPCDevice_TLB in 'C:\Program Files (x86)\Borland\Delphi7\Imports\SMOPCDevice_TLB.pas',
-  SMOPCServerDevice_TLB in 'C:\Program Files (x86)\Borland\Delphi7\Imports\SMOPCServerDevice_TLB.pas';
+  SMOPCServerDevice_TLB in '..\..\App\Delphi7\Imports\SMOPCServerDevice_TLB.pas';
 
 {$R *.TLB}
 

@@ -14,7 +14,7 @@ uses
   Variants,
 {$ENDIF}
   Windows,Messages,SysUtils,Classes,Graphics,StdCtrls,Forms,Dialogs,Controls,
-  ShellAPI,ActiveX,OPCDA,SMOPCDevice_TLB;
+  ShellAPI,ActiveX,OPCDA,SMOPCServerDevice_TLB;
 
 type
  itemIDStrings = record
@@ -65,7 +65,7 @@ const
 
 var
  itemValues:array[0..22] of word;
- devices:TSMOPCDevice;
+ devices:ISMOPCServerDevice;
 
 function ScanToChar(const theString:string; var start:integer;theChar:char):string;
 function ReturnPropIDFromTagname(const tagName:string):longword;
@@ -234,8 +234,10 @@ end;
 // end;
 //end;
 
-initialization
-  devices:=TSMOPCDevice.Create(nil);
+initialization            
+  CoInitialize(nil);
+  devices:=CoSMOPCServerDevice_.Create();
 finalization
   FreeAndNil(devices);
+  CoUninitialize();
 end.
